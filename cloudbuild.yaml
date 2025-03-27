@@ -3,7 +3,7 @@ steps:
     entrypoint: "bash"
     args:
       - "-c"
-      -
+      - |
         if [ "$BRANCH_NAME" = "main" ]; then
           gcloud app deploy app.main.yaml --quiet;
         elif [ "$BRANCH_NAME" = "dev" ]; then
@@ -15,4 +15,3 @@ substitutions:
   _BRANCH_NAME: "${BRANCH_NAME}"
 options:
   logging: CLOUD_LOGGING_ONLY
-  

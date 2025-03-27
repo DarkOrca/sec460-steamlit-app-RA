@@ -4,9 +4,9 @@ steps:
     args:
       - "-c"
       -
-        if ["$BRANCH_NAME" = "main" ]; then
+        if [ "$BRANCH_NAME" = "main" ]; then
           gcloud app deploy app.main.yaml --quiet;
-        elsif [ "$BRANCH_NAME" = "dev" ]; then
+        elif [ "$BRANCH_NAME" = "dev" ]; then
           gcloud app deploy app.dev.yaml --quiet;
         else
           echo "Branch not configured for deployment"
